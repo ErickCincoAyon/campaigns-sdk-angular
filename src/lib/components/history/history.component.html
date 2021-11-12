@@ -1,0 +1,28 @@
+<div class="history" #historyModal>
+    <div class="list" (click)="$event.stopPropagation();"> 
+        <h2>Historial de campañas <i class="close icon" (click)="closeHistory();"></i></h2>
+        <ul class="list-ul" #historyList> 
+            <li>
+                <th>imagen</th>
+                <th>título</th>
+                <th>descripción</th>
+                <th>ver</th>
+            </li>
+            <li *ngFor="let campaign of campaigns">
+                <img src="{{ 'https://uwu-anime.net/api/v1/anime/image/' + campaign.image }}" alt="{{ campaign.image }}">
+                <h4>{{ campaign.name }}</h4>
+                <p>{{ campaign.description }}</p>
+                <i class="eye icon"></i>
+            </li>
+        </ul>
+        <div class="pagination">
+            <ul class="pagination-ul">
+                <li (click)="changePage( 'back' );"><i class="caret left icon"></i></li>
+                <li>{{ page }}</li>
+                <li>/</li>
+                <li (click)="changePage( totalPages );">{{ totalPages }}</li>
+                <li (click)="changePage( 'next' );"><i class="caret right icon"></i></li>
+            </ul>
+        </div>
+    </div>
+</div>

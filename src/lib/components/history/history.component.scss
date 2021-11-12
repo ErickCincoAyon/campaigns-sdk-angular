@@ -1,0 +1,232 @@
+@import '../../scss/colors.scss';
+
+.history {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn .3s;
+    font-family: $font;
+
+    .list {
+        width: 45%;
+        height: 80%;
+        background-color: $body-color;
+        position: relative;
+        user-select: none;
+
+        h2 {
+            letter-spacing: 2px;
+            color: $font-white;
+            background-color: $purple;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            font-size: 17px;
+            padding: 0 10px 0 15px;
+            height: 55px;
+            text-transform: uppercase;
+            transition: $transition;
+            margin: 0;
+
+            i {
+                margin-left: auto;
+                font-size: 23px;
+                cursor: pointer;
+                transition: $transition;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .list-ul {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            padding: 0 15px;
+            list-style: none;
+            height: calc(100% - 130px);
+            overflow-y: scroll;
+            background-color: $white;
+
+            &::-webkit-scrollbar {
+                width: 3px;
+            }
+              
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: #f1f1f1; 
+            }
+               
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $purple-light; 
+            }
+              
+              /* Handle on hover */
+            &::-webkit-scrollbar-thumb:hover {
+                background: $purple;
+            }
+            
+            li {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 80px;
+                background-color: $white;
+                border-bottom: 1px solid $border-light;
+                padding: 0 10px;
+                transition: $transition;
+                cursor: pointer;
+
+                &:hover {
+                    h4, p, i {
+                        color: $purple;
+                    }
+                }
+
+                &:nth-of-type(1) {
+                    height: 40px;
+
+                    th {
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                        text-transform: uppercase;
+                        text-align: center;
+
+                        &:nth-of-type(1) {
+                            width: 10%;
+                        }
+
+                        &:nth-of-type(2) {
+                            width: 24%;
+                        }
+
+                        &:nth-of-type(3) {
+                            width: 55%;
+                        }
+
+                        &:nth-of-type(4) {
+                            width: 11%;
+                            text-align: right;
+                        }
+                    }
+                }
+
+                &:nth-of-type(11) {
+                    border-bottom: 0;
+                }
+
+                img {
+                    width: 80px;
+                    min-width: 80px;
+                    max-width: 80px;
+                    height: 55px;
+                    min-height: 55px;
+                    max-height: 55px;
+                    object-fit: cover;
+                    border-radius: 3px;
+                    margin-right: 10px;
+                    border: 1px solid $border-light;
+                }
+
+                h4 {
+                    width: 140px;
+                    min-width: 140px;
+                    height: 20px;
+                    margin: 0;
+                    text-align: center;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    margin-right: 10px;
+                    font-size: 15px;
+                    letter-spacing: 1px;
+                    transition: $transition;
+                }
+
+                p {
+                    flex: 1 0 1 30%;
+                    min-width: 30%;
+                    height: 60px;
+                    margin: 0;
+                    padding: 6px;
+                    color: $font-gray;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    font-size: 12px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    transition: $transition;
+                }
+
+                i {
+                    margin-left: auto;
+                    color: $font-dark;
+                    transition: $transition;
+                }
+            }
+        }
+
+        .pagination {
+            width: 100%;
+            height: 75px;
+            border-top: 1px solid $border-light;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .pagination-ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 60%;
+                    width: 50px;
+                    background-color: $white;
+                    color: $font-dark;
+                    border: 1px solid $border-light;
+                    cursor: pointer;
+                    transition: $transition;
+
+                    i {
+                        margin-top: -4px;
+                        margin-left: 4px;
+                    }
+
+                    &:hover {
+                        background-color: $purple;
+                        color: $font-white;
+                        box-shadow: $shadow;
+                        border-color: $purple;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hide-list {
+    animation: fadeOut .3s !important;
+}

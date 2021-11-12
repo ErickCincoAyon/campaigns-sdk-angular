@@ -1,0 +1,56 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap%27');
+$font: 'Quicksand', sans-serif;
+
+// Body Color
+$body-color: #F0F0F0;
+
+// Backgrounds
+$white: #fff;
+$dark: #2B2B2B;
+
+// Main Color 
+$purple: #64257E;
+$purple-light: #ac9ff3;
+$purple-dark: #8d81d1;
+
+// Fonts Color
+$font-white: #fff;
+$font-dark: #202020;
+$font-gray: #6E6E6E;
+$font-white-light: #F0F0F0;
+
+// Borders Color
+$border-light: #e1e1e1;
+$border-dark: #101010;
+
+$action: #0095f6;
+$danger: #f8737e;
+$black-grey: #202020;
+
+$transition: all .2s ease-in-out;
+$shadow: 0 7px 6px -6px black;
+
+$love: #f3808a;
+$wait: #f3ebb6;
+$watch: #70c5df;
+
+$dark-light: #505050;
+$gray: #6E6E6E;
+$orange: #F17338;
+$red: #FE6A6A;
+$green: #92c595;
+$blue: #14bbf0;
+
+// Emision message colors
+$color-love:#f3808a;
+$bg-love: #faf1f2;
+$shadow-love: 0 0 0 1px #cc979c inset, 0 0 0 0 transparent;
+
+$color-wait:#e6d884;
+$bg-wait: #fcfaf0;
+$shadow-wait: 0 0 0 1px #cecab4 inset, 0 0 0 0 transparent;
+
+$color-watch:#70c5df;
+$bg-watch: #f0f9fc;
+$shadow-watch: 0 0 0 1px #a3bcc4 inset, 0 0 0 0 transparent;
