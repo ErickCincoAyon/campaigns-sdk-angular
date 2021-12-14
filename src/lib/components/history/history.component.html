@@ -1,28 +1,175 @@
-<div class="history" #historyModal>
-    <div class="list" (click)="$event.stopPropagation();"> 
-        <h2>Historial de campañas <i class="close icon" (click)="closeHistory();"></i></h2>
+<div class="history" *ngIf="campaignType === 'history'" 
+    [ngStyle]="{ 'font-family': configTheme.font_family }" #historyModal>
+    <div class="list" (click)="$event.stopPropagation();">
+        <div class="header-list">
+            <h2 [ngStyle]="{ 'font-family': configTheme.font_family }">Historial de campañas <i class="close icon" (click)="closeHistory();"></i></h2>
+        </div>
         <ul class="list-ul" #historyList> 
             <li>
-                <th>imagen</th>
-                <th>título</th>
-                <th>descripción</th>
-                <th>ver</th>
+                <th [ngStyle]="{ 'color': configTheme.font_color }">imagen</th>
+                <th [ngStyle]="{ 'color': configTheme.font_color }">título</th>
+                <th [ngStyle]="{ 'color': configTheme.font_color }">descripción</th>
+                <th [ngStyle]="{ 'color': configTheme.font_color }">ver</th>
             </li>
             <li *ngFor="let campaign of campaigns">
-                <img src="{{ 'https://uwu-anime.net/api/v1/anime/image/' + campaign.image }}" alt="{{ campaign.image }}">
-                <h4>{{ campaign.name }}</h4>
-                <p>{{ campaign.description }}</p>
-                <i class="eye icon"></i>
+                <div class="li-part">
+                    <img src="{{ 'https://uwu-anime.net/api/v1/anime/image/' + campaign.image }}" alt="{{ campaign.image }}">
+                </div>
+                <div class="li-part">
+                    <h4 [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family }">{{ campaign.name }}</h4>
+                </div>
+                <div class="li-part">
+                    <p [ngStyle]="{ 'color': configTheme.font_color_light }">{{ campaign.description }}</p>
+                </div>
+                <div class="li-part">
+                    <i class="eye icon" [ngStyle]="{ 'color': configTheme.font_color_light }"></i>
+                </div>
             </li>
+
+            <!-- <li>
+                <div class="li-part">
+                    <img src="../../assets/yastas-bb-3.png" alt="banorte.png">
+                </div>
+                <div class="li-part">
+                    <h4 [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family }">Promociones</h4>
+                </div>
+                <div class="li-part">
+                    <p [ngStyle]="{ 'color': configTheme.font_color_light }">Conoce nuestras promociones</p>
+                </div>
+                <div class="li-part">
+                    <i class="eye icon" [ngStyle]="{ 'color': configTheme.font_color_light }"></i>
+                </div>
+            </li>
+            <li>
+                <div class="li-part">
+                    <img src="../../assets/banorte.png" alt="banorte.png">
+                </div>
+                <div class="li-part">
+                    <h4 [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family }">Descuentos</h4>
+                </div>
+                <div class="li-part">
+                    <p [ngStyle]="{ 'color': configTheme.font_color_light }">Hay nuevos descuentos para ti</p>
+                </div>
+                <div class="li-part">
+                    <i class="eye icon" [ngStyle]="{ 'color': configTheme.font_color_light }"></i>
+                </div>
+            </li>
+            <li>
+                <div class="li-part">
+                    <img src="../../assets/yastas-cb-4.jpg" alt="banorte.png">
+                </div>
+                <div class="li-part">
+                    <h4 [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family }">Aviso</h4>
+                </div>
+                <div class="li-part">
+                    <p [ngStyle]="{ 'color': configTheme.font_color_light }">Existen nuevas notificaciones</p>
+                </div>
+                <div class="li-part">
+                    <i class="eye icon" [ngStyle]="{ 'color': configTheme.font_color_light }"></i>
+                </div>
+            </li>
+            <li>
+                <div class="li-part">
+                    <img src="../../assets/yastas-cb-4.jpg" alt="banorte.png">
+                </div>
+                <div class="li-part">
+                    <h4 [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family }">Promociones</h4>
+                </div>
+                <div class="li-part">
+                    <p [ngStyle]="{ 'color': configTheme.font_color_light }">Conoce nuestras promociones</p>
+                </div>
+                <div class="li-part">
+                    <i class="eye icon" [ngStyle]="{ 'color': configTheme.font_color_light }"></i>
+                </div>
+            </li>
+            <li>
+                <div class="li-part">
+                    <img src="../../assets/yastas-bb-3.png" alt="banorte.png">
+                </div>
+                <div class="li-part">
+                    <h4 [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family }">Campaña tipo imagen</h4>
+                </div>
+                <div class="li-part">
+                    <p [ngStyle]="{ 'color': configTheme.font_color_light }">Campaña tipo imagen</p>
+                </div>
+                <div class="li-part">
+                    <i class="eye icon" [ngStyle]="{ 'color': configTheme.font_color_light }"></i>
+                </div>
+            </li> -->
         </ul>
         <div class="pagination">
-            <ul class="pagination-ul">
+            <!-- <ul class="pagination-ul">
                 <li (click)="changePage( 'back' );"><i class="caret left icon"></i></li>
                 <li>{{ page }}</li>
                 <li>/</li>
                 <li (click)="changePage( totalPages );">{{ totalPages }}</li>
                 <li (click)="changePage( 'next' );"><i class="caret right icon"></i></li>
-            </ul>
+            </ul> -->
+            <h5 [ngStyle]="{ 'color': configTheme.font_color, 'font-family': configTheme.font_family }">Elementos por pagina:</h5>
+            <select name="select" [ngStyle]="{ 'color': configTheme.font_color_light, 'font-family': configTheme.font_family }">
+                <option value="value1" selected>10</option>
+                <option value="value2">15</option>
+                <option value="value3">20</option>
+              </select>
+            <p [ngStyle]="{ 'color': configTheme.font_color_light }">1 de 10</p>
+            <button><i class="caret left icon" [ngStyle]="{ 'color': configTheme.font_color }"></i></button>
+            <button><i class="caret right icon" [ngStyle]="{ 'color': configTheme.font_color }"></i></button>
         </div>
+    </div>
+</div>
+
+<div class="dialogs" *ngIf="campaignType === 'dialogs'" #dialogsModal>
+    <div class="list" #dialogList>
+        <button (click)="slidePrev();$event.stopPropagation();" [ngStyle]="{ 'background-color': configTheme.color_main }"><i class="caret left icon"></i></button>
+            <swiper
+                [config]="config"
+                #swiper
+            >   
+                <ng-template swiperSlide>
+                    <div class="dialog">
+                        <div class="imgLarge-text-btn">
+                            <div class="close"><i class="close icon"></i></div>
+                            <img src="../../assets/yastas-bb-3.png" alt="banorte.png">
+                            <h4 [ngStyle]="{ 'color': configTheme.font_color, 'font-family': configTheme.font_family  }">Promociones</h4>
+                            <h5 [ngStyle]="{ 'color': configTheme.font_color_light, 'font-family': configTheme.font_family  }">Conoce nuestras promociones</h5>
+                            <button [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family  }">Cancelar</button>
+                            <button [ngStyle]="{ 'background-color': configTheme.color_main, 'font-family': configTheme.font_family  }">Continuar</button>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="dialog">
+                        <div class="img-text-btn">
+                            <div class="close"><i class="close icon"></i></div>
+                            <h4 [ngStyle]="{ 'color': configTheme.font_color, 'font-family': configTheme.font_family  }">Descuentos</h4>
+                            <img src="../../assets/banorte.png" alt="banorte.png">
+                            <h5 [ngStyle]="{ 'color': configTheme.font_color_light, 'font-family': configTheme.font_family  }">Hay nuevos descuentos para ti</h5>
+                            <button [ngStyle]="{ 'color': configTheme.color_main, 'font-family': configTheme.font_family  }">Cancelar</button>
+                            <button [ngStyle]="{ 'background-color': configTheme.color_main, 'font-family': configTheme.font_family  }">Continuar</button>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="dialog">
+                        <div class="only-image">
+                            <div class="close"><i class="close icon"></i></div>
+                            <img src="../../assets/yastas-cb-4.jpg" alt="banorte.png">
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template swiperSlide>
+                    <div class="dialog">
+                        <div class="banner">
+                            <div class="close"><i class="close icon"></i></div>
+                            <img src="../../assets/yastas-cb-4.jpg" alt="banorte.png">
+                            <div class="right-side">
+                                <h4 [ngStyle]="{ 'color': configTheme.font_color, 'font-family': configTheme.font_family  }">Aviso</h4>
+                                <h5 [ngStyle]="{ 'color': configTheme.font_color_light, 'font-family': configTheme.font_family  }">Existen nuevas notificaciones</h5>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+           </swiper>
+        <button (click)="slideNext();$event.stopPropagation();" [ngStyle]="{ 'background-color': configTheme.color_main }"><i class="caret right icon"></i></button>
     </div>
 </div>
