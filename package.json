@@ -1,6 +1,21 @@
 {
   "name": "campaigns-sdk-angular",
-  "version": "0.0.1",
+  "version": "0.0.9",
+  "description": "inicio de libreria sdk campaigns",
+  "keywords": [
+    "sdk", "campaigns"
+  ],
+  "homepage": "https://github.com/ErickCincoAyon/campaigns-sdk-angular",
+  "bugs": {
+    "url": "https://github.com/ErickCincoAyon/campaigns-sdk-angular",
+    "email": "erickcincoa@gmail.com"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Erick Cinco",
+    "email": "erickcincoa@gmail.com",
+    "url": "https://github.com/ErickCincoAyon"
+  },
   "peerDependencies": {
     "@angular/common": "^12.2.0",
     "@angular/core": "^12.2.0"
